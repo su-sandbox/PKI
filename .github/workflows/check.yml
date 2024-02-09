@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ macOS-10.15, ubuntu-20.04, ubuntu-22.04, windows-2022 ]
-        r-version: [ release, devel ]
+        os: [ macos-13, macos-14, ubuntu-22.04, windows-2022 ]
+        r-version: [ release ]
 
     steps:
       - uses: actions/checkout@v2
@@ -26,6 +26,6 @@ jobs:
       - uses: s-u/R-actions/pkg-check@master
         with:
           debian-deps: libssl-dev
-          macos-deps: openssl-1.1.1p
+          macos-deps: openssl-1.1.1t
           windows-deps: openssl
           check-flags: --as-cran
